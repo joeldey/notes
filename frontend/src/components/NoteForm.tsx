@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { createNote } from '../api';
+import styles from './NoteForm.module.css';
 
 interface Note {
     id: number;
@@ -23,33 +24,21 @@ const NoteForm = ({ onNoteAdded }: NoteFormProps) => {
     };
 
     return (
-        <div className="note-form" style={{ marginTop: '20px' }}>
-            <h2>Add New Note</h2>
-            <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '10px' }}>
+        <div className={styles.container}>
+            <h2 className={styles.title}>Add New Note</h2>
+            <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.fieldWrapper}>
                     <textarea
                         value={newNote}
                         onChange={(e) => setNewNote(e.target.value)}
-                        style={{
-                            width: '100%',
-                            padding: '10px',
-                            borderRadius: '5px',
-                            border: '1px solid #ddd'
-                        }}
+                        className={styles.textarea}
                         placeholder="Write your note here..."
                         rows={4}
                     />
                 </div>
                 <button
                     type="submit"
-                    style={{
-                        padding: '10px 15px',
-                        backgroundColor: '#4CAF50',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer'
-                    }}
+                    className={styles.submitButton}
                     disabled={!newNote.trim()}
                 >
                     Add Note

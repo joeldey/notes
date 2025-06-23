@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/notes';
+const API_URL = 'http://localhost:3001/notes';
 
 export const fetchNotes = async () => {
     const res = await axios.get(API_URL);

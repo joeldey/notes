@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import NoteList from './components/NoteList';
 import NoteForm from './components/NoteForm';
+import styles from './App.module.css';
 
 interface Note {
     id: number;
@@ -15,8 +16,8 @@ function App() {
     };
 
     return (
-        <div className="container" style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-            <h1>Notes App</h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>Notes App</h1>
             <NoteList notes={notes} setNotes={setNotes} />
             <NoteForm onNoteAdded={handleNoteAdded} />
         </div>

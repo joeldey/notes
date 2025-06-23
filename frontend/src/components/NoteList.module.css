@@ -1,0 +1,43 @@
+@import '../styles/variables/colors.css';
+@import '../styles/variables/spacing.css';
+
+.container {
+    padding: 0;
+}
+
+.title {
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.emptyState {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: var(--space-md) 0;
+}
+
+.notesList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noteItem {
+    padding: var(--padding-card);
+    margin: var(--space-sm) 0;
+    background-color: var(--color-surface-variant);
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.noteItem:hover {
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-border);
+}
+
+.noteContent {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+}

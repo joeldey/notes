@@ -11,13 +11,19 @@ cd backend && npm install
 cd ../frontend && npm install
 ```
 
-### 2. Setup Database
+### 2. Setup Environment Variables
+Create a `.env` file in the `backend/` directory with the following content:
+```
+DATABASE_URL="file:./dev.db"
+```
+
+### 3. Setup Database
 Run the following command inside the `backend/` directory to initialize the SQLite database:
 ```sh
 npx prisma migrate dev --name init
 ```
 
-### 3. Start the Application
+### 4. Start the Application
 Run the backend and frontend servers:
 
 **Start Backend:**
@@ -35,7 +41,7 @@ npm run dev
 The frontend should now be available at `http://localhost:3000`.
 
 
-### 4. Testing the App
+### 5. Testing the App
 - Open `http://localhost:3000` in your browser.
 - Add a note and confirm it appears in the list.
 
